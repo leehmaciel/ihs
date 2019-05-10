@@ -1,0 +1,38 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst pcihellocore -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst pcihellocore.pcie_hard_ip_0.cal_blk_clk -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0.reset_controller_internal -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0.pcie_rstn_conduit -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0.refclk_conduit -pg 1
+preplace inst pcihellocore.inport -pg 1 -lvl 2 -y 230
+preplace inst pcihellocore.hexport -pg 1 -lvl 2 -y 130
+preplace inst pcihellocore.switchs -pg 1 -lvl 2 -y 870
+preplace inst pcihellocore.pcie_hard_ip_0.test_in_conduit -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0.pcie_internal_hip -pg 1
+preplace inst pcihellocore.ledred -pg 1 -lvl 2 -y 970
+preplace inst pcihellocore.pcie_hard_ip_0.avalon_reset -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0.avalon_clk -pg 1
+preplace inst pcihellocore.ledgreen -pg 1 -lvl 2 -y 770
+preplace inst pcihellocore.pcie_hard_ip_0.pipe_interface_internal -pg 1
+preplace inst pcihellocore.display -pg 1 -lvl 2 -y 30
+preplace inst pcihellocore.pcie_hard_ip_0.altgx_internal -pg 1
+preplace inst pcihellocore.pcie_hard_ip_0 -pg 1 -lvl 1 -y 240
+preplace inst pcihellocore.keys -pg 1 -lvl 2 -y 670
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcie_hard_ip_0.pcie_rstn,(SLAVE)pcihellocore.pcie_hard_ip_0_pcie_rstn) 1 0 1 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcihellocore.pcie_hard_ip_0_tx_out,(SLAVE)pcie_hard_ip_0.tx_out) 1 0 1 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)switchs.external_connection,(SLAVE)pcihellocore.switchs_external_connection) 1 0 2 NJ 900 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)inport.external_connection,(SLAVE)pcihellocore.inport_external_connection) 1 0 2 NJ 640 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcihellocore.display_external_connection,(SLAVE)display.external_connection) 1 0 2 NJ 60 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcihellocore.hexport_external_connection,(SLAVE)hexport.external_connection) 1 0 2 NJ 160 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcihellocore.pcie_hard_ip_0_refclk,(SLAVE)pcie_hard_ip_0.refclk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>pcihellocore</net_container>(MASTER)pcie_hard_ip_0.bar0,(SLAVE)pcie_hard_ip_0.cra,(SLAVE)inport.s1,(SLAVE)display.s1,(SLAVE)pcie_hard_ip_0.txs,(SLAVE)switchs.s1,(SLAVE)ledgreen.s1,(SLAVE)keys.s1,(SLAVE)hexport.s1,(SLAVE)ledred.s1) 1 0 2 250 680 560
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)ledgreen.external_connection,(SLAVE)pcihellocore.ledgreen_external_connection) 1 0 2 NJ 800 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcie_hard_ip_0.rx_in,(SLAVE)pcihellocore.pcie_hard_ip_0_rx_in) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>pcihellocore</net_container>(SLAVE)keys.reset,(SLAVE)ledgreen.reset,(SLAVE)switchs.reset,(SLAVE)inport.reset,(MASTER)pcie_hard_ip_0.pcie_core_reset,(SLAVE)ledred.reset,(SLAVE)hexport.reset,(SLAVE)display.reset) 1 1 1 600
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)ledred.external_connection,(SLAVE)pcihellocore.ledred_external_connection) 1 0 2 NJ 1000 NJ
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcie_hard_ip_0.powerdown,(SLAVE)pcihellocore.pcie_hard_ip_0_powerdown) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>pcihellocore</net_container>(SLAVE)ledred.clk,(SLAVE)pcie_hard_ip_0.cal_blk_clk,(SLAVE)switchs.clk,(SLAVE)keys.clk,(SLAVE)pcie_hard_ip_0.reconfig_gxbclk,(SLAVE)inport.clk,(SLAVE)ledgreen.clk,(MASTER)pcie_hard_ip_0.pcie_core_clk,(SLAVE)display.clk,(SLAVE)hexport.clk,(SLAVE)pcie_hard_ip_0.fixedclk) 1 0 2 230 660 580
+preplace netloc EXPORT<net_container>pcihellocore</net_container>(SLAVE)pcihellocore.keys_external_connection,(SLAVE)keys.external_connection) 1 0 2 NJ 700 NJ
+levelinfo -pg 1 0 180 810
+levelinfo -hier pcihellocore 190 380 650 800
